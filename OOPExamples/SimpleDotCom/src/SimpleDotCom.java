@@ -1,24 +1,34 @@
-public String checkYourself(String stringGuess) {
+public class SimpleDotCom {
 
-    int guess = Integer.ParseInt(stringGuess);
+	int[] locationCells;
+	int numOfHits = 0;
 
-    String result = "miss";
+	public void setLocationCells([]int locations) {
 
-    for (int cell : locationCells){
+		locationCells = locations;
 
-    	if(guess==cell){
-            result="hit!";
-            numOfHits++;
-            break;
-        }
-    }
+	}
 
-    if(numOfHits==locationCells.length){
-        result="kill!!";
-    }
+	public String checkYourself(String stringGuess) {
 
-    System.out.Println(result);
+			int guess = Integer.ParseInt(stringGuess);
+			String result = "miss";
 
-    return result;
-    }
+			for (int cell : locationCells){
+				if(guess==cell){
+						result="hit!";
+						numOfHits++;
+						break;
+					}
+			}
+
+			if(numOfHits==locationCells.length){
+					result="kill!!";
+			}
+
+			System.out.Println(result);
+
+			return result;
+
+		}
 }
